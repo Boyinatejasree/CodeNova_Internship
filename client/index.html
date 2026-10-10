@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Notes</h1>
+    <input id="search" type="search" placeholder="Search title or content…" aria-label="Search notes" />
+    <div class="view-toggle" role="group" aria-label="View">
+      <button id="view-grid" class="active" aria-pressed="true">Cards</button>
+      <button id="view-list" aria-pressed="false">List</button>
+    </div>
+    <button id="new-note" class="primary">+ New note</button>
+  </header>
+
+  <main>
+    <p id="status" class="status" aria-live="polite"></p>
+    <section id="notes" class="notes grid"></section>
+  </main>
+
+  <dialog id="editor">
+    <form id="note-form" method="dialog">
+      <h2 id="editor-title">New note</h2>
+      <label>Title
+        <input id="f-title" maxlength="120" required />
+      </label>
+      <label>Content
+        <textarea id="f-content" rows="8"></textarea>
+      </label>
+      <div class="actions">
+        <button type="button" id="cancel">Cancel</button>
+        <button type="submit" class="primary" id="save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toasts" class="toasts" aria-live="assertive"></div>
+  <script src="app.js"></script>
+</body>
+</html>
