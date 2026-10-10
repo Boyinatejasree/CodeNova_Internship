@@ -104,3 +104,5 @@ A friendly message appears when nothing matches the search.
 ## License
 
 MIT
+
+[Back to all projects](../README.md)
