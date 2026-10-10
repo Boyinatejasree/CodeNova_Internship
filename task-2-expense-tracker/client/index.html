@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Expense Tracker</h1>
+    <span class="tagline">Track income and spending in one place</span>
+  </header>
+
+  <main>
+    <section class="cards" aria-label="Balance summary">
+      <article class="card income">
+        <h2>Total income</h2>
+        <p id="sum-income" class="amount">–</p>
+      </article>
+      <article class="card expense">
+        <h2>Total expenses</h2>
+        <p id="sum-expense" class="amount">–</p>
+      </article>
+      <article class="card net" id="net-card">
+        <h2>Net savings</h2>
+        <p id="sum-net" class="amount">–</p>
+      </article>
+    </section>
+
+    <div class="layout">
+      <section class="panel" aria-labelledby="form-title">
+        <h2 id="form-title">Add transaction</h2>
+        <form id="tx-form" novalidate>
+          <fieldset class="type-toggle">
+            <legend class="sr-only">Type</legend>
+            <label class="seg"><input type="radio" name="type" value="expense" checked /><span>Expense</span></label>
+            <label class="seg"><input type="radio" name="type" value="income" /><span>Income</span></label>
+          </fieldset>
+
+          <label for="f-amount">Amount (₹)</label>
+          <input id="f-amount" name="amount" inputmode="decimal" autocomplete="off" placeholder="0.00" />
+          <small class="err" id="err-amount"></small>
+
+          <label for="f-category">Category</label>
+          <select id="f-category" name="category"></select>
+          <small class="err" id="err-category"></small>
+
+          <label for="f-date">Date</label>
+          <input id="f-date" name="date" type="date" />
+          <small class="err" id="err-date"></small>
+
+          <label for="f-description">Description <span class="opt">(optional)</span></label>
+          <input id="f-description" name="description" maxlength="200" autocomplete="off" placeholder="e.g. Lunch with friends" />
+          <small class="err" id="err-description"></small>
+
+          <button type="submit" class="primary" id="save">Add transaction</button>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="history-title">
+        <div class="panel-head">
+          <h2 id="history-title">Transaction history</h2>
+          <label class="filter">
+            <span class="sr-only">Filter by type</span>
+            <select id="filter">
+              <option value="">All</option>
+              <option value="income">Income</option>
+              <option value="expense">Expenses</option>
+            </select>
+          </label>
+        </div>
+        <p id="status" class="status" aria-live="polite"></p>
+        <table id="tx-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th class="num">Amount</th>
+              <th><span class="sr-only">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="tx-body"></tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <div id="toasts" class="toasts" aria-live="assertive"></div>
+  <script src="app.js"></script>
+</body>
+</html>
