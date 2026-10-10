@@ -190,3 +190,5 @@ The browser only talks to `/api`. Every number on screen (balance cards and tabl
 ## License
 
 MIT
+
+[Back to all projects](../README.md)
