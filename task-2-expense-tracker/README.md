@@ -186,6 +186,13 @@ The browser only talks to `/api`. Every number on screen (balance cards and tabl
 **Date validation:** future dates are not allowed
 
 ![Date validation](docs/date-validation.png)
+## demo
+
+https://github.com/user-attachments/assets/2158fcaa-6503-4ffa-9871-c8c56e76aec6
+
+
+
+
 
 ## License
 
