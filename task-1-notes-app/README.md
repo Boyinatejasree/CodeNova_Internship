@@ -104,6 +104,9 @@ A friendly message appears when nothing matches the search.
 Network failures show a toast instead of breaking the page.
 
 ![Error toast](docs/error-toast.png)
+## Demo
+
+https://github.com/user-attachments/assets/83babac5-8c5d-4d82-ad2d-84c7c277d6c7
 
 ## License
 
