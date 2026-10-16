@@ -100,6 +100,10 @@ Results filter instantly by title and content, and the matching text is highligh
 A friendly message appears when nothing matches the search.
 
 ![No search results](docs/search-no-results.png)
+### Error handling
+Network failures show a toast instead of breaking the page.
+
+![Error toast](docs/error-toast.png)
 
 ## License
 
